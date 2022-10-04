@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio Empleados...</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container"><h1 class="display-1 bg-primary">Gestiones Empleados</h1>
+        <h6> {%if user.is_authenticated%} Bienvenido! {{user.username}}!
+            <a href="{% url 'Cerrar' %}">
+                <button type="button" class="btn btn-outline-danger">Cerrar Sesion</button>
+            </a>
+        </h6>
+    </div>
+
+<div class="container mt-5">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <form action="{% url 'ConsultaRegistros' %}" method="post">
+            {% csrf_token %} 
+            <div class="mb-2 ml-0">
+                <input type="number" name="idregis" required>
+                <button type="submit" class="btn btn-info">Buscar Registro</button>
+            </div>
+        </form>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a href="{% url 'Registros' %}"> 
+                <button class="btn btn-primary me-md-2" type="button">Mostrar todos</button>
+            </a>
+            <a href="{% url 'FormRegistro' %}"">
+                <button class="btn btn-primary me-md-2" type="button">Agregar Registro</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% if mensaje%}
+<div class="container col-8 align-center alert alert-success" role="alert">
+    {{mensaje}}
+</div>
+{%endif%}
+
+{% if ErrorC%}
+<div class="container col-8 align-center alert alert-danger" role="alert"> 
+    {{ErrorC}}
+</div>
+{%endif%}
+
+<div class="container mt-5">
+
+<table class="table table-striped table-dark table-hover mt-3">
+    <thead>
+        <th>Registro ID</th>
+        <th>Tipo</th>
+        <th>Valor</th>
+        <th>Usuario</th>
+        <th>ID Empresa</th>
+        <th>Fecha</th>
+    </thead>
+    <tbody>
+{% for reg in mensajeR%}
+    <tr>
+        <td>{{reg.idregis}}</td>
+        <td>{{reg.tipo}}</td>
+        <td>{{reg.valor}}</td>
+        <td>{{reg.idusuario_id}}</td>
+        <td>{{reg.empresa_id_id}}</td>
+        <td>{{reg.fecha}}</td>
+    </tr> 
+{% endfor %}
+    </tbody>
+</table>
+</div>
+{% else%} No ha iniciado Sesión {%endif%}
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+body{
+    background-image: url(https://cdn.ulsinc.com/assets/images/materials/textiles/592b98b576b6741c157622a5/fabric-and-textiles-laser-cutting-engraving-marking_v1.jpg);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.countheader{
+    background-color: greenyellow;
+    height: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    background-image: url(https://1.bp.blogspot.com/-lyY0suRHKzM/X62hum9zzoI/AAAAAAAAQj0/zVtLnzlMytspSwEOqZgje97vIfvJ3ADDACPcBGAYYCw/s16000/proceso-de-fabricacion-de-textiles-diferentes-telas.jpg);
+    width:80px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 5px;
+    align-self: center;
+
+}
+
+.menu{
+    background-color:0;
+    width:40%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulologo{
+    background-color: blueviolet;
+    color:rgb(22, 24, 24);
+    width: 40%;
+    height: 100px;
+    margin-right: 60px;
+    margin-left: 20px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.lista{
+    background-color: rebeccapurple;
+    display: inline;
+    width: 200px;
+    border-radius: 50px 10px;
+    padding: 20px 10px;
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 18px;
+}
+
+.titulolop{
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
